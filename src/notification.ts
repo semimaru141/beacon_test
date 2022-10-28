@@ -3,11 +3,12 @@ import PushNotificationIOS, { PushNotification } from "@react-native-community/p
 const subscribeNotification = () => {
   const type = 'notification';
   PushNotificationIOS.addEventListener(type, onRemoteNotification);
-  PushNotificationIOS.addNotificationRequest({
-    id: new Date().getTime().toString(),
-    title: 'test',
-    fireDate: new Date(new Date().getTime() + 3000)
-  });
+  setTimeout(() => {
+      PushNotificationIOS.addNotificationRequest({
+      id: new Date().getTime().toString(),
+      title: 'test'
+    });
+  }, 1000);
   return () => {
     PushNotificationIOS.removeEventListener(type);
   };

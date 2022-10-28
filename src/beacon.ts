@@ -22,7 +22,10 @@ const func = (f: (n: string) => void) => {
   );
 
   // Request for authorization while the app is open
+  Beacons.requestAlwaysAuthorization();
   Beacons.requestWhenInUseAuthorization();
+  // @ts-ignore
+  Beacons.allowsBackgroundLocationUpdates(true);
   Beacons.shouldDropEmptyRanges(true);
 
   // // @ts-ignore
