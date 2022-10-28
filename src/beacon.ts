@@ -7,27 +7,16 @@ const region = {
 };
 
 const func = (f: (n: string) => void) => {
-  PushNotificationIOS.requestPermissions({
-    alert: true,
-    badge: true,
-    sound: true,
-    critical: true,
-  }).then(
-    (data) => {
-      console.log('PushNotificationIOS.requestPermissions', data);
-    },
-    (data) => {
-      console.log('PushNotificationIOS.requestPermissions failed', data);
-    },
-  );
-
   // Request for authorization while the app is open
   Beacons.requestAlwaysAuthorization();
-  Beacons.requestWhenInUseAuthorization();
+  // Beacons.requestWhenInUseAuthorization();
   // @ts-ignore
   Beacons.allowsBackgroundLocationUpdates(true);
   Beacons.shouldDropEmptyRanges(true);
 
+  Beacons.getAuthorizationStatus((status) => {
+    console.log('location status', status);
+  });
   // // @ts-ignore
   // const subscription = Beacons.BeaconsEventEmitter.addListener(
   //   'beaconsDidRange',

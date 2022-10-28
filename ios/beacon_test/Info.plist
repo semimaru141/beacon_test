@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>description location always</string>
 	<key>BGTaskSchedulerPermittedIdentifiers</key>
 	<array>
 		<string>jp.co.life-coach.beacon_test.back</string>
@@ -45,6 +43,10 @@
 	<string>BLE用のMessage</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>利用するためのdescription</string>
+  <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+  <string>description location always</string>
+  <key>NSBluetoothPeripheralUsageDescription</key>
+  <string>bluetooth用のdesc</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>bluetooth-central</string>
